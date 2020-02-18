@@ -1,0 +1,59 @@
+/* Flot plugin for automatically redrawing plots as the placeholder resizes.
+
+Copyright (c) 2007-2013 IOLA and Ole Laursen.
+Licensed under the MIT license.
+
+It works by listening for changes on the placeholder div (through the jQuery
+resize event plugin) - if the size changes, it will redraw the plot.
+
+There are no options. If you need to disable the plugin for some plots, you
+can just fix the size of their placeholders.
+
+*/
+
+/* Inline dependency:
+ * jQuery resize event - v1.1 - 3/14/2010
+ * http://benalman.com/projects/jquery-resize-plugin/
+ *
+ * Copyright (c) 2010 "Cowboy" Ben Alman
+ * Dual licensed under the MIT and GPL licenses.
+ * http://benalman.com/about/license/
+ */
+
+(function ($, h, c) { let a = $([]); const e = $.resize = $.extend($.resize, {}); let i; const k = 'setTimeout'; const j = 'resize'; const d = j + '-special-event'; const b = 'delay'; const f = 'throttleWindow'; e[b] = 250; e[f] = true; $.event.special[j] = { setup () { if (!e[f] && this[k]) { return false } const l = $(this); a = a.add(l); $.data(this, d, { w: l.width(), h: l.height() }); if (a.length === 1) { g() } }, teardown () { if (!e[f] && this[k]) { return false } const l = $(this); a = a.not(l); l.removeData(d); if (!a.length) { clearTimeout(i) } }, add (l) { if (!e[f] && this[k]) { return false } let n; function m (s, o, p) { const q = $(this); const r = $.data(this, d); r.w = o !== c ? o : q.width(); r.h = p !== c ? p : q.height(); n.apply(this, arguments) } if ($.isFunction(l)) { n = l; return m } else { n = l.handler; l.handler = m } } }; function g () { i = h[k](function () { a.each(function () { const n = $(this); const m = n.width(); const l = n.height(); const o = $.data(this, d); if (m !== o.w || l !== o.h) { n.trigger(j, [o.w = m, o.h = l]) } }); g() }, e[b]) } })(jQuery, this);
+
+(function ($) {
+  const options = { } // no options
+
+  function init (plot) {
+    function onResize () {
+      const placeholder = plot.getPlaceholder()
+
+      // somebody might have hidden us and we can't plot
+      // when we don't have the dimensions
+      if (placeholder.width() == 0 || placeholder.height() == 0) { return }
+
+      plot.resize()
+      plot.setupGrid()
+      plot.draw()
+    }
+
+    function bindEvents (plot, eventHolder) {
+      plot.getPlaceholder().resize(onResize)
+    }
+
+    function shutdown (plot, eventHolder) {
+      plot.getPlaceholder().unbind('resize', onResize)
+    }
+
+    plot.hooks.bindEvents.push(bindEvents)
+    plot.hooks.shutdown.push(shutdown)
+  }
+
+  $.plot.plugins.push({
+    init,
+    options,
+    name: 'resize',
+    version: '1.0'
+  })
+})(jQuery)

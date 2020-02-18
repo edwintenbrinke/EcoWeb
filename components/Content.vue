@@ -1,11 +1,10 @@
 <template>
-    <v-content class="main-content">
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
+  <v-content class="main-content">
+    <v-container>
+      <nuxt />
+    </v-container>
+  </v-content>
 </template>
-
 
 <style scoped>
   .main-content {

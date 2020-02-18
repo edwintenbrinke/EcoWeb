@@ -1,27 +1,27 @@
 <template>
-    <v-app-bar
-      :clipped-left="false"
-      fixed
-      app
-      class="header-design"
-    >
-      <v-app-bar-nav-icon @click.stop="$store.commit('navbar/toggle')" />
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <span>Server: test</span>
-      <span>User: user</span>
-    </v-app-bar>
+  <v-app-bar
+    :clipped-left="false"
+    fixed
+    app
+    class="header-design"
+  >
+    <v-app-bar-nav-icon @click.stop="$store.commit('navbar/toggle')" />
+    <v-toolbar-title v-text="title" />
+    <v-spacer />
+    <span>Server: test</span>
+    <span>User: user</span>
+  </v-app-bar>
 </template>
 
 <script>
 
 export default {
-    data() {
-        return {
-            imgSource: '',
-            title: 'Title'
-        }
+  data () {
+    return {
+      imgSource: '',
+      title: 'Title'
     }
+  }
 }
 </script>
 

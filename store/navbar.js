@@ -1,9 +1,9 @@
 export const state = () => ({
-    show: true
-  })
+  show: true
+})
 
 export const mutations = {
-    toggle (state) {
-        state.show = !state.show;
-    }
+  toggle (state) {
+    state.show = !state.show
+  }
 }

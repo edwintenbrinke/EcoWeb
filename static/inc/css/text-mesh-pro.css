@@ -1,0 +1,64 @@
+Info, .Info{
+	color:#0092F8
+}
+Error, .Error{
+	color:#FF5226
+}
+Name, .Name{
+	color:#FDE698
+}
+Controls, .Controls{
+	color:#0092F8
+}
+Item, .Item{
+	color:#0092F8
+}
+Bonus, .Bonus{
+	color:#8FCDF7
+}
+Subtext, .Subtext{
+}
+Header, .Header{
+	color:#0092F8
+}
+Positive, .Positive{
+	color:#9AD046
+}
+Negative, .Negative{
+}
+Recipe, .Recipe{
+	color:#FFE83D
+}
+Currency, .Currency{
+	color:#9AD046
+}
+ErrorLight, .ErrorLight{
+	color:#FF8A6B
+}
+InfoLight, .InfoLight{
+	color:#8FCDF7
+}
+WhisperLight, .WhisperLight{
+	color:#FDE698
+}
+Warning, .Warning{
+	color:#E6BA41
+}
+ChatTag, .ChatTag{
+	color:#0092F8
+}
+ChatTagReadOnly, .ChatTagReadOnly{
+	color:#009947
+}
+BankAccount, .BankAccount{
+	color:#FF9947
+}
+Title, .Title{
+	color:#FFE74C
+}
+Government, .Government{
+	color:#CCE74C
+}
+ChatTime, .ChatTime{
+	color:#0092F8
+}

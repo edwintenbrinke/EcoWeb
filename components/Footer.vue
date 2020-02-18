@@ -1,11 +1,11 @@
 <template>
   <v-footer
-      :fixed="true"
-      app
-      class="footer-design"
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    :fixed="true"
+    app
+    class="footer-design"
+  >
+    <span>&copy; {{ new Date().getFullYear() }}</span>
+  </v-footer>
 </template>
 
 <script>

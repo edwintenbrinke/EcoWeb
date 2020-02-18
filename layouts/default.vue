@@ -1,13 +1,13 @@
 <template>
   <v-app>
     <!-- Navigation -->
-    <Drawer/>
+    <Drawer />
     <!-- Header -->
-    <Header/>
+    <Header />
     <!-- Show Content -->
-    <Content/>
+    <Content />
     <!-- Footer -->
-    <!-- <Footer/> -->
+    <Footer />
   </v-app>
 </template>
 

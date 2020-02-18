@@ -20,3 +20,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+## TODO
+ - https://sweetalert2.github.io/
+ - https://www.npmjs.com/package/@nuxtjs/toast
+ - Footer design
